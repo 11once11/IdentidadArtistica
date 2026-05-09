@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11Eleven Designs — Identidad Artística</title>
+<style>
+:root{--vp:#C084FC;--vm:#A855F7;--vd:#9333EA;--bg:#000;--panel:#080015;--panel2:#0a0018;--b1:#1a0535;--b2:#2a0850;--w6:rgba(255,255,255,.6);--w4:rgba(255,255,255,.4);--w2:rgba(255,255,255,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 5%;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--b1)}
+.nav-logo{height:36px}
+.nav-cta{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:10px 20px;border-radius:50px;font-size:12px;font-weight:700;white-space:nowrap}
+
+/* SECTIONS */
+section{padding:64px 5%}
+.container{max-width:720px;margin:0 auto;text-align:center}
+.label{font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--vm);text-transform:uppercase;margin-bottom:16px}
+h1{font-size:clamp(26px,6vw,52px);font-weight:800;line-height:1.2;background:linear-gradient(135deg,#fff 0%,#C084FC 50%,#9333EA 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px}
+h2{font-size:clamp(20px,4vw,32px);font-weight:800;line-height:1.25;margin-bottom:16px}
+.sub{font-size:15px;color:var(--w6);line-height:1.7;margin-bottom:28px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#9333EA 30%,#C084FC 70%,transparent);opacity:.35;margin:0 5%}
+
+/* BLOBS */
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.12}
+
+/* HERO */
+#hero{padding-top:120px;position:relative;overflow:hidden;text-align:center}
+#hero .blob{width:500px;height:500px;background:radial-gradient(circle,rgba(147,51,234,.3),transparent 70%);top:-100px;left:50%;transform:translateX(-50%)}
+.hero-tag{display:inline-block;background:rgba(192,132,252,.1);border:1px solid rgba(192,132,252,.25);color:var(--vp);font-size:10px;font-weight:700;letter-spacing:2px;padding:6px 18px;border-radius:50px;margin-bottom:24px}
+.hero-lines{font-size:15px;color:var(--w6);line-height:2;margin-bottom:32px}
+.btn-wa{display:inline-block;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:16px 36px;border-radius:50px;font-size:14px;font-weight:800;margin-bottom:14px;transition:transform .2s,box-shadow .2s}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,.3)}
+.micro{font-size:12px;color:var(--w4);max-width:360px;margin:0 auto}
+
+/* DOLOR */
+#dolor .items{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;margin:28px 0;max-width:600px;margin:28px auto}
+.dolor-item{background:var(--panel);border:1px solid var(--b1);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--w6);display:flex;gap:10px;align-items:flex-start;position:relative;overflow:hidden}
+.dolor-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9333EA,transparent)}
+.dolor-item span{color:var(--vm);font-size:16px;flex-shrink:0}
+.punch{font-size:clamp(18px,3vw,26px);font-weight:800;background:linear-gradient(135deg,#fff,#C084FC 60%,#9333EA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:20px}
+
+/* PROCESO */
+#proceso .steps{display:flex;flex-direction:column;gap:0;max-width:620px;margin:32px auto;text-align:left}
+.step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--b1);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-num{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#9333EA,#C084FC);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0}
+.step-body h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.step-body p{font-size:13px;color:var(--w6);line-height:1.6}
+
+/* COMBO */
+#combo{background:var(--panel);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1)}
+.combo-card{background:var(--panel2);border:2px solid var(--vm);border-radius:24px;padding:36px 32px;max-width:600px;margin:0 auto;position:relative;overflow:hidden;text-align:left}
+.combo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9333EA,transparent)}
+.combo-badge{display:inline-block;background:linear-gradient(135deg,#9333EA,#C084FC);color:#fff;font-size:9px;font-weight:800;padding:5px 18px;border-radius:50px;letter-spacing:1px;margin-bottom:20px}
+.combo-card h2{font-size:clamp(18px,3vw,28px);margin-bottom:8px}
+.combo-card .desc{font-size:14px;color:var(--w6);margin-bottom:28px;line-height:1.6}
+.combo-includes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:32px}
+.ci{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--w6)}
+.ci::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--vm);flex-shrink:0}
+.combo-cta{display:block;text-align:center;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:17px 32px;border-radius:50px;font-size:15px;font-weight:800;transition:transform .2s,box-shadow .2s}
+.combo-cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,.35)}
+.blob-combo{position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(147,51,234,.12),transparent 70%);top:-100px;right:-100px;filter:blur(60px);pointer-events:none}
+
+/* TESTIMONIOS */
+#testimonios .grid{columns:2;gap:14px;max-width:960px;margin:32px auto}
+.testi{break-inside:avoid;margin-bottom:14px}
+.testi img{width:100%;border-radius:14px;display:block}
+
+/* FILTRO */
+#filtro .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:680px;margin:28px auto;text-align:left}
+.fcol{background:var(--panel);border:1px solid var(--b1);border-radius:16px;padding:22px 18px}
+.fcol h3{font-size:13px;font-weight:700;margin-bottom:14px;color:var(--w4);text-transform:uppercase;letter-spacing:1.5px}
+.fcol li{list-style:none;font-size:13px;color:var(--w6);padding:6px 0;border-bottom:1px solid var(--b1);display:flex;gap:8px;align-items:center}
+.fcol li:last-child{border-bottom:none}
+.fcol li .dot{width:4px;height:4px;border-radius:50%;background:var(--vm);flex-shrink:0}
+.no .dot{background:#444}
+.yes .dot{background:#25D366}
+
+/* TRANSFORMACION */
+#transform .ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:680px;margin:28px auto;text-align:left}
+.ba-col{background:var(--panel);border:1px solid var(--b1);border-radius:16px;padding:22px 18px;position:relative;overflow:hidden}
+.ba-col::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9333EA,transparent)}
+.ba-col h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;color:var(--w4)}
+.ba-col li{list-style:none;font-size:13px;color:var(--w6);padding:5px 0;display:flex;gap:8px;align-items:center}
+.ba-col li .icon{font-size:14px;flex-shrink:0}
+
+/* CTA FINAL */
+#cta-final{text-align:center;position:relative;overflow:hidden;padding:80px 5%}
+#cta-final .blob{width:500px;height:500px;background:radial-gradient(circle,rgba(147,51,234,.14),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%)}
+#cta-final .btn-wa{font-size:15px;padding:18px 44px}
+
+/* FOOTER */
+footer{text-align:center;padding:28px 5%;border-top:1px solid var(--b1);font-size:12px;color:var(--w4)}
+footer img{height:28px;opacity:.6;margin-bottom:10px;display:block;margin:0 auto 10px}
+
+/* MOBILE */
+@media(max-width:600px){
+  section{padding:48px 4%}
+  nav{padding:14px 4%}
+  .nav-logo{height:28px}
+  .nav-cta{padding:8px 14px;font-size:11px}
+  #hero{padding-top:100px}
+  .hero-tag{font-size:9px;padding:5px 14px;letter-spacing:1.5px}
+  .hero-lines{font-size:14px;line-height:1.8}
+  .btn-wa{display:block;text-align:center;padding:15px 20px;font-size:13px;width:100%}
+  .micro{font-size:11px}
+  #dolor .items{grid-template-columns:1fr}
+  .dolor-item{font-size:13px}
+  .punch{font-size:18px}
+  #proceso .steps{max-width:100%}
+  .step{gap:14px;padding:18px 0}
+  .step-num{width:32px;height:32px;font-size:12px;flex-shrink:0}
+  .step-body h3{font-size:14px}
+  .step-body p{font-size:12px}
+  .combo-card{padding:24px 16px}
+  .combo-card h2{font-size:18px}
+  .combo-card .desc{font-size:13px}
+  .combo-includes{grid-template-columns:1fr}
+  .combo-cta{font-size:13px;padding:15px 16px}
+  #filtro .cols{grid-template-columns:1fr}
+  .fcol h3{font-size:12px}
+  .fcol li{font-size:12px}
+  .ba{grid-template-columns:1fr}
+  .ba-col h3{font-size:11px}
+  .ba-col li{font-size:12px}
+  #testimonios .grid{columns:1}
+  #cta-final{padding:64px 4%}
+  #cta-final .btn-wa{display:block;text-align:center;padding:16px 20px;font-size:13px;width:100%}
+  footer{font-size:11px;padding:24px 4%}
+}
+
+/* ANIMATE */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+.fade-up.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <img class="nav-logo" src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/E11LogoSDS.png" alt="11Eleven Designs">
+  <a href="https://wa.link/1bjwse" class="nav-cta">Hablemos →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob"></div>
+  <div class="container fade-up">
+    <div class="hero-tag">IDENTIDAD ARTÍSTICA · BRANDING VISUAL</div>
+    <h1>Tu proyecto no se ve al nivel de la visión que tenés en la cabeza.</h1>
+    <div class="hero-lines">
+      Capaz la música está.<br>
+      Capaz el talento también.<br>
+      Pero cuando alguien entra a tu perfil…<br>
+      todavía no se siente como un artista con identidad.
+    </div>
+    <a href="https://wa.link/1bjwse" class="btn-wa">QUIERO QUE MI PROYECTO TENGA PRESENCIA</a>
+    <p class="micro">No hacemos "diseños lindos". Construimos identidad, presencia y percepción para artistas que se quieren tomar en serio.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DOLOR -->
+<section id="dolor">
+  <div class="container fade-up">
+    <div class="label">¿Te pasa esto?</div>
+    <h2>Tu música tiene algo. Pero todavía no se percibe así.</h2>
+    <div class="items">
+      <div class="dolor-item"><span>·</span>Tu música tiene algo… pero visualmente no transmite lo mismo</div>
+      <div class="dolor-item"><span>·</span>Sacás temas buenos con visuales improvisadas</div>
+      <div class="dolor-item"><span>·</span>Cada lanzamiento parece de un artista distinto</div>
+      <div class="dolor-item"><span>·</span>Entrás a tu perfil y sentís que le falta peso</div>
+      <div class="dolor-item"><span>·</span>Tenés ideas y referencias pero no lográs bajar todo eso a algo sólido</div>
+      <div class="dolor-item"><span>·</span>Querés verte más serio, más claro, más vos</div>
+    </div>
+    <div class="punch">mi proyecto podría transmitir MUCHO más de lo que transmite hoy.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="container fade-up">
+    <div class="label">El proceso</div>
+    <h2>Primero entendemos al artista. Después construimos la imagen.</h2>
+  </div>
+  <div class="steps fade-up">
+    <div class="step"><div class="step-num">01</div><div class="step-body"><h3>Analizamos tu proyecto</h3><p>Tu música, letras, referencias, energía y situación actual. Entendemos qué hace diferente tu proyecto y por qué hoy todavía no se percibe así.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div class="step-body"><h3>Bajamos tu identidad</h3><p>Claridad sobre tu visión, personalidad artística, mensaje, estética, universo y tono. Muchos artistas no tienen falta de potencial — tienen falta de dirección.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div class="step-body"><h3>Construimos tu branding visual</h3><p>Una identidad sólida y coherente para que tu proyecto se vea más serio, más claro, más pesado y más alineado con tu música.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div class="step-body"><h3>Todo bajo la misma movie</h3><p>Spotify, Instagram, YouTube, contenido, visuales, piezas y posters — todo alineado bajo la misma identidad.</p></div></div>
+    <div class="step"><div class="step-num">05</div><div class="step-body"><h3>Te damos estructura</h3><p>No solo archivos. Te damos dirección, claridad, criterio visual y una guía — una identidad que podés sostener.</p></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMBO -->
+<section id="combo">
+  <div class="container fade-up">
+    <div class="label">Lo que incluye</div>
+    <h2>Todo lo que necesitás para construir esa identidad.</h2>
+    <p class="sub">Un solo paquete completo. Sin improvisar, sin parches.</p>
+  </div>
+  <div class="combo-card fade-up">
+    <div class="blob-combo"></div>
+    <div class="combo-badge">IDENTIDAD ARTÍSTICA COMPLETA</div>
+    <h2>El paquete de branding que transforma cómo se percibe tu proyecto</h2>
+    <p class="desc">Desde el análisis profundo hasta la guía de uso — todo lo que hace falta para que cuando alguien entre a tu perfil diga: <em>"ok… este artista tiene una propuesta."</em></p>
+    <div class="combo-includes">
+      <div class="ci">Análisis profundo de tu proyecto</div>
+      <div class="ci">Desarrollo de identidad artística</div>
+      <div class="ci">Branding visual completo</div>
+      <div class="ci">Logo tipográfico</div>
+      <div class="ci">Sistema visual y estética</div>
+      <div class="ci">Banners y perfiles de redes</div>
+      <div class="ci">Diseño de póster</div>
+      <div class="ci">Visual kit editable</div>
+      <div class="ci">Historias destacadas</div>
+      <div class="ci">Aplicables para reels</div>
+      <div class="ci">Presentación PDF profesional</div>
+      <div class="ci">Guía para tu equipo</div>
+      <div class="ci">2 llamadas privadas</div>
+      <div class="ci">Video explicativo de tu identidad</div>
+    </div>
+    <a href="https://wa.link/1bjwse" class="combo-cta">QUIERO CONSTRUIR MI IDENTIDAD ARTÍSTICA →</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FILTRO -->
+<section id="filtro">
+  <div class="container fade-up">
+    <div class="label">Esto no es para cualquiera</div>
+    <h2>¿Para quién es esto?</h2>
+  </div>
+  <div class="cols fade-up">
+    <div class="fcol">
+      <h3>No es para vos si…</h3>
+      <ul>
+        <li class="no"><span class="dot"></span>Solo querés una portada rápida</li>
+        <li class="no"><span class="dot"></span>Buscás algo "lindo" para salir del paso</li>
+        <li class="no"><span class="dot"></span>No tenés intención de construir un proyecto</li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h3>Es para vos si…</h3>
+      <ul>
+        <li class="yes"><span class="dot"></span>Tenés visión y sentís que tenés algo fuerte</li>
+        <li class="yes"><span class="dot"></span>Querés dejar de improvisar en cada lanzamiento</li>
+        <li class="yes"><span class="dot"></span>Querés construir un proyecto sólido de verdad</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRANSFORMACION -->
+<section id="transform">
+  <div class="container fade-up">
+    <div class="label">El resultado</div>
+    <h2>No salís con una estética nueva.</h2>
+    <p class="sub">Salís con un proyecto que por fin te representa.</p>
+  </div>
+  <div class="ba fade-up">
+    <div class="ba-col">
+      <h3>Antes</h3>
+      <ul>
+        <li><span class="icon">—</span>Visuales desconectadas</li>
+        <li><span class="icon">—</span>Estética sin dirección</li>
+        <li><span class="icon">—</span>Perfil sin presencia</li>
+        <li><span class="icon">—</span>Sensación de improvisación</li>
+        <li><span class="icon">—</span>Inseguridad al mostrar el proyecto</li>
+      </ul>
+    </div>
+    <div class="ba-col" style="border-color:var(--b2)">
+      <h3>Después</h3>
+      <ul>
+        <li><span class="icon">✦</span>Identidad clara y coherente</li>
+        <li><span class="icon">✦</span>Imagen sólida y reconocible</li>
+        <li><span class="icon">✦</span>Más presencia, más impacto</li>
+        <li><span class="icon">✦</span>Seguridad al lanzar</li>
+        <li><span class="icon">✦</span>Ya no se ve como uno más</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="container fade-up">
+    <div class="label">Artistas que lo vivieron</div>
+    <h2>Los resultados hablan solos.</h2>
+  </div>
+  <div class="grid fade-up">
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/01_Lanax_Testimonio-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/02_Blassnel_Testimonio-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/03_Markynho_Testimonio-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/04_BossKillah_Testimonios-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/04_Logar_Testimonio-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/04_Vickyta_Testimonios-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/05_Nkro_Testimonio-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/Angel_Testimonio_09-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/DeloreanBoy_Testimonio_11-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/ElBuzzo_Testimonio_06-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/Eroz_Testimonio_15-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/FuazG_Testimonio_04-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/KidTommy_Testimonio_10-001.png" alt="testimonio" loading="lazy"></div>
+    <div class="testi"><img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/Saytet_Testimonio_12-001.png" alt="testimonio" loading="lazy"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="blob"></div>
+  <div class="container fade-up">
+    <div class="label">¿Listo?</div>
+    <h1>Tu música ya tiene algo.</h1>
+    <h2 style="background:linear-gradient(135deg,#C084FC,#9333EA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px">Hacé que el proyecto también lo transmita.</h2>
+    <p class="sub" style="margin-bottom:32px">Si sentís que tu proyecto merece verse más sólido, más serio y más alineado con lo que querés construir, podemos ayudarte.</p>
+    <a href="https://wa.link/1bjwse" class="btn-wa">QUIERO CONSTRUIR MI IDENTIDAD ARTÍSTICA →</a>
+  </div>
+</section>
+
+<footer>
+  <img src="https://raw.githubusercontent.com/11once11/IdentidadArtistica/main/E11LogoSDS.png" alt="11Eleven Designs">
+  © 2025 11Eleven Designs — Identidad para artistas que se toman en serio.
+</footer>
+
+<script>
+const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
